@@ -10,6 +10,7 @@ let loaded_netrwPlugin = 1
 :set mouse=a
 :set foldmethod=indent
 
+
 call plug#begin('~/.config/nvim/pack')
 
 Plug 'https://github.com/preservim/nerdtree'
@@ -22,8 +23,11 @@ Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()
 
-:nmap <C-t> :NERDTreeToggle<CR> 
+"Transparent background
 colorscheme bamboo
+highlight Normal guibg=none
+highlight NormalNC guibg=none
+:nmap <C-t> :NERDTreeToggle<CR> 
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :

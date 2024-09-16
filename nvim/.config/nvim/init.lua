@@ -16,8 +16,11 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
+-- Open File with all folds open. Similar to running zR. 
+-- Recall that zM closes all folds
+vim.opt.foldlevel = 20
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
@@ -86,21 +89,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
---vim.cmd([[
---    call plug#begin('~/.config/nvim/pack')
---
---    Plug 'https://github.com/preservim/nerdtree'
---    Plug 'https://github.com/ribru17/bamboo.nvim'
---    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
---    Plug 'nvim-lualine/lualine.nvim'
---    " If you want to have icons in your statusline choose one of these
---    Plug 'nvim-tree/nvim-web-devicons'
---
---    call plug#end()
---    "Transparent background
---    colorscheme bamboo
---    ]])
---vim.keymap.set('n', '<C-t>', '<cmd>:NERDTreeToggle<CR>')
 
 
 

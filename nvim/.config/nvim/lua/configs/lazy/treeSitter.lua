@@ -12,6 +12,7 @@ return{
 			  additional_vim_regex_highlighting = { "markdown" },
 	  },
           indent = { enable = true },  
+			vim.cmd("hi Comment guifg=NvimLightGreen")
         })
     end
  }

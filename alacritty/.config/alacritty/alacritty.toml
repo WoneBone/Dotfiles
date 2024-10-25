@@ -1,7 +1,6 @@
-import = ["/home/wonebone/.config/alacritty/themes/themes/flexoki.toml"]
 [window]
 startup_mode="Maximized"
-opacity = 0.9
+opacity = 0.6
 
 [font]
 size = 12
@@ -9,3 +8,6 @@ size = 12
 [font.normal]
 family = "Hurmit Nerd Font Mono"
 style = "Regular"
+
+[general]
+import = ["/home/wonebone/.config/alacritty/themes/themes/flexoki.toml"]

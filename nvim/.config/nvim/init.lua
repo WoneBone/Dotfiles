@@ -46,7 +46,7 @@ vim.opt.foldmethod='indent'
 
 --Remap ill forguet to use
 vim.keymap.set('n', '<Leader>n', '<cmd>cnext<cr>')
-vim.keymap.set('n', '<Leader>N', '<cmd>cNext<cr>')
+vim.keymap.set('n', '<Leader>N', '<cmd>cprev<cr>')
 
 -- Save undo history
 vim.opt.undofile = true

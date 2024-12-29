@@ -1,6 +1,6 @@
 [window]
 startup_mode="Maximized"
-opacity = 0.6
+opacity = 0.8
 
 [font]
 size = 12
@@ -8,6 +8,9 @@ size = 12
 [font.normal]
 family = "Hurmit Nerd Font Mono"
 style = "Regular"
+
+[terminal]
+shell = "/bin/zsh"
 
 [general]
 import = ["/home/wonebone/.config/alacritty/themes/themes/flexoki.toml"]

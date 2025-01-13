@@ -6,6 +6,7 @@ return{
 	config = function()
 		require('bamboo').setup {
 			transparent = true,
+			style = 'multiplex',
 		}
     require('bamboo').load()
   end,

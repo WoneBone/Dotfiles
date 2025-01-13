@@ -5,11 +5,10 @@ return{
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "java", "python", "bash" },
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "java", "python", "bash", "markdown", "markdown_inline" },
           sync_install = false,
           highlight = {
 			  enable = true,
-			  additional_vim_regex_highlighting = { "markdown" },
 	  },
           indent = { enable = true },  
 			vim.cmd("hi Comment guifg=NvimLightGreen")

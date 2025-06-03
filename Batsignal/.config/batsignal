@@ -5,9 +5,14 @@
 15
 -d
 10
+-m
+10
 -D
 "poweroff"
 -P
 "Charging"
-
+-U
+"Batery discharging."
+-I
+
 

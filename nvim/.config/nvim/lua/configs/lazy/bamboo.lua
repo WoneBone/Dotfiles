@@ -5,7 +5,7 @@ return{
   priority = 1000,
 	config = function()
 		require('bamboo').setup {
-			transparent = true,
+			transparent = false,
 			style = 'multiplex',
 		}
     require('bamboo').load()

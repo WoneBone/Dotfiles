@@ -3,13 +3,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 2;        /* gaps between windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 3;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "HurmitMono:size=15" };
-static const char dmenufont[]       = "HurmitMono:size=15";
+static const char *fonts[]          = { "HurmitMono:size=13" };
+static const char dmenufont[]       = "HurmitMono:size=13";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -18,7 +18,7 @@ static const char col_cyan[]        = "#005577";
 static const char col_green[] 		= "#66800B";
 static const char col_green_l[] 	= "#879A39";
 static const unsigned int baralpha = 0xd0;
-static const unsigned int borderalpha = OPAQUE;
+static const unsigned int borderalpha = 0xd0;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -31,7 +31,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "󰖟", "", "󱔗", "4", "5", "6", "󰊴", "󰭻", "󰂰"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Galculator",NULL,      NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -71,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 /*Custom Commands*/
 static const char *browser[]  = { "brave", NULL };
@@ -84,9 +85,12 @@ static const char *mute_mic[] = {"pactl", "set-source-mute", "@DEFAULT_SOURCE@",
 static const char *brighter[] = { "brightnessctl", "set", "3%+", NULL };
 static const char *dimmer[]   = { "brightnessctl", "set", "3%-", NULL };
 static const char *lock_screen[]   = { "xscreensaver-command", "-lock", NULL};
+static const char *play_pause[]   = { "playerctl", "play-pause", NULL};
+static const char *audio_n[]   = { "playerctl", "next", NULL};
+static const char *audio_p[]   = { "playerctl", "previous", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,       spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,				XK_f, 		spawn, 			{.v = browser } },
 	{ MODKEY|ShiftMask,				XK_s, 		spawn, 			SHCMD("/home/wonebone/.scripts/screenshots/screenshotsel.sh")},
 	{ MODKEY, 						XK_s, 		spawn, 			SHCMD("/home/wonebone/.scripts/screenshots/screenshot.sh")},
@@ -98,6 +102,9 @@ static const Key keys[] = {
 	{ 0, 							XF86XK_MonBrightnessDown, 	spawn, 	{.v = dimmer } },
 	{ 0, 							XF86XK_MonBrightnessUp,   	spawn, 	{.v = brighter } },
 	{ 0, 							XF86XK_Launch1,			   	spawn, 	{.v = lock_screen } },
+	{ 0, 							XF86XK_AudioPlay,			   	spawn, 	{.v = play_pause } },
+	{ 0, 							XF86XK_AudioNext,			   	spawn, 	{.v = audio_n } },
+	{ 0, 							XF86XK_AudioPrev,			   	spawn, 	{.v = audio_p } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

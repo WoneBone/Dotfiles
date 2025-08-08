@@ -1,8 +1,9 @@
 [window]
 startup_mode="Maximized"
+opacity=0.90
 
 [font]
-size = 10
+size = 8
 
 [font.normal]
 family = "Hurmit Nerd Font Mono"

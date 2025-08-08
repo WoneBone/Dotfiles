@@ -56,8 +56,10 @@ static const char unknown_str[] = "n/a";
  *                                                     thermal zone on FreeBSD
  *                                                     (tz0, tz1, etc.)
  * uid                 UID of current user             NULL
+ * up                  interface is running            interface name (eth0)
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
+ * alsa_master_vol     ALSA Master device volume       NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
@@ -71,6 +73,6 @@ static const struct arg args[] = {
 	{ cpu_perc,			"󰒋 %s% | ",				NULL 		},
 	{ ram_perc,			" %s% | ",				NULL 		},
 	{ battery_perc,		" %s%% | ",			"BAT0"		},
-	{ vol_perc,			"  %s%% | ",			"/dev/mixer"},
+	{ alsa_master_vol,	"  %s | ",			NULL		},
 	{ datetime, 		"%s  ",					"%T"		},
 };

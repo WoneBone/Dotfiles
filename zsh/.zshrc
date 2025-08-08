@@ -10,6 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,6 +81,7 @@ ZSH_THEME=""
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+# source $HOME/tools/Xilinx/2025.1/Vitis/settings64.sh
 
 # User configuration
 
@@ -109,6 +111,7 @@ alias CirMaker="/home/wonebone/.wine/drive_c/CM60S/Cirmaker.exe"
 alias matlab22="/usr/local/MATLAB/R2022b/bin/matlab"
 alias java11="/usr/lib/jvm/java-11-openjdk/bin/java"
 alias dashboard="tmux attach -t dashboard"
+alias cat="bat"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

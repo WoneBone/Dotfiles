@@ -8,7 +8,7 @@
 -m
 10
 -D
-"poweroff"
+systemctl hybrid-sleep
 -P
 "Charging"
 -U

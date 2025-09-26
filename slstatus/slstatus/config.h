@@ -12,6 +12,8 @@ static const char unknown_str[] = "n/a";
 /*
  * function            description                     argument (example)
  *
+ * battery_icon        battery_perc with an icon       battery name (BAT0)
+ *                                                     NULL on OpenBSD/FreeBSD
  * battery_perc        battery percentage              battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * battery_remaining   battery remaining HH:MM         battery name (BAT0)
@@ -59,6 +61,8 @@ static const char unknown_str[] = "n/a";
  * up                  interface is running            interface name (eth0)
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
+ * vol_icon            vol_perc with an icon           mixer file (/dev/mixer)
+ *                                                     NULL on OpenBSD/FreeBSD
  * alsa_master_vol     ALSA Master device volume       NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD/FreeBSD
@@ -72,7 +76,7 @@ static const struct arg args[] = {
 	{ temp, 			" %s°C | ", 			"/sys/class/thermal/thermal_zone0/temp"},
 	{ cpu_perc,			"󰒋 %s% | ",				NULL 		},
 	{ ram_perc,			" %s% | ",				NULL 		},
-	{ battery_perc,		" %s%% | ",			"BAT0"		},
+	{ battery_icon,		"%s%% | ",			"BAT0"		},
 	{ alsa_master_vol,	"  %s | ",			NULL		},
 	{ datetime, 		"%s  ",					"%T"		},
 };

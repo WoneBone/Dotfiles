@@ -82,6 +82,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 # source $HOME/tools/Xilinx/2025.1/Vitis/settings64.sh
+source /etc/profile
 
 # User configuration
 

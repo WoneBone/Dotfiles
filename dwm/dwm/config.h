@@ -31,7 +31,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "󰖟", "", "󱔗", "4", "5", "6", "󰊴", "󰭻", "󰂰"};
+static const char *tags[] = { "󰖟", "", "󱔗", "4", "5", "6", "󰊴", "󰭻", "󰝚"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -49,6 +49,7 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const int refreshrate = 60;  /* refresh rate (per second) for client move/resize */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -75,7 +76,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 /*Custom Commands*/
-static const char *browser[]  = { "brave", NULL };
+static const char *browser[]  = { "firefox", NULL };
 static const char *files[]  = { "thunar", NULL };
 
 static const char *up_vol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL};
